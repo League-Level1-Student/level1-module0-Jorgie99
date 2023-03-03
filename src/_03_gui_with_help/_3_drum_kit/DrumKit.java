@@ -6,8 +6,10 @@ import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 import game_tools.Sound;
 
@@ -17,30 +19,30 @@ public class DrumKit implements MouseListener {
 
     public void run() {
         //  Make a JFrame variable and initialize it using "new JFrame()"
-
+    	JFrame drumKit = new JFrame();
         //  Make the frame visible and
         // set its default close operation to JFrame.EXIT_ON_CLOSE
-
+    	drumKit.setVisible(true);
         //  Set the title of the frame
-
+    	drumKit.setTitle("Drum Kit");
         //  Make a JPanel variable and initialize it using "new JPanel().
-
+    	JPanel invis = new JPanel();
         //  Add the panel to the frame. (The panel is invisible.)
-
+    	drumKit.add(invis);
         //  Use the image of a drum provided ("snare.jpg") or
         //  download an image of a drum from the Internet and drop it into the
         //  Drum Kit recipe package.
-
+    	JLabel drumLabel;
         //  Put the name of the drum image file in a String variable.
-
+    	String drumFile = "snare.jpg";
         //  Edit the next line to use your String variable
         // drumLabel = createLabelImage(drumImageString);
-
+    	drumLabel = createLabelImage(drumFile);
         //  Add the label to the panel
-
+    	invis.add(drumLabel);
         //  Call the pack() method on the frame.
         // Run your program. Do you see your drum image?
-
+    	drumKit.pack();
         // Add this MouseListener to drumLabel
 
         // *** Write the code in the mouseClicked() method below
@@ -57,7 +59,7 @@ public class DrumKit implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         // Print "mouse clicked" to the console. Run your program and watch
         // the console to see when this is printed.
-
+    	System.out.println("mouse clicked");
         //JLabel labelClicked = (JLabel) e.getSource(); // This line gets the label
                                                         // that the mouse
                                                         // clicked on
